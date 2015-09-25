@@ -1,0 +1,12 @@
+<div id="profile-card">
+  <div class="profile-picture">
+    <img src="<%= @profile.picture["data"]["url"] %>"></img>
+  </div>
+  <div class="profile-basics">
+    <h1><%= @profile.name %> (<%= @profile.email %>)</h1>
+    <p>Date of Birth: <%= @profile.birthday  %></p>
+  </div>
+  <div class="profile-controls">
+    <%= link_to "Edit Profile", edit_profile_url, class: "button" %>
+  </div>
+</div>
