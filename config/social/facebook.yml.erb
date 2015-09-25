@@ -1,6 +1,6 @@
 development:
-  app_id: "1554382644803582"
-  secret_key: "c90dfb96b0ca39dcbaf28bc63ce37a9a"
+  app_id: <%= ENV["FACEBOOK_APP_ID"] %>
+  secret_key: <%= ENV["FACEBOOK_SECRET"] %>
   site_url: "https://graph.facebook.com/v2.3/"
   token_url: "/oauth/access_token"
   authorize_url: "https://www.facebook.com/dialog/oauth?client_id=%s&redirect_uri=%s"
