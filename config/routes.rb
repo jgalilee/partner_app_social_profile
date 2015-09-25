@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resource :sessions, only: [:index] do
     resource :facebook, controller: :facebook, only: [:new] do
-      get :redirect, action: :create
+      get :callback, action: :create
     end
   end
 end
