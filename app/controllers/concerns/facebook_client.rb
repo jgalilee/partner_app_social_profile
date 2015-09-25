@@ -39,7 +39,8 @@ module FacebookClient
 
   def facebook_client_settings
     if !defined?(@settings)
-      settings = YAML.load(File.open("#{Rails.root}/config/social/facebook.yml"))
+      file = ERB.new(File.read("#{Rails.root}/config/social/facebook.yml.erb"))
+      settings = YAML.load(file.result)
       @settings = settings[Rails.env].symbolize_keys
     end
     @settings
