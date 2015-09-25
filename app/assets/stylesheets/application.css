@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: sans-serif;
+  background: #FFFFFF;
+}
+
+#profile-card {
+  margin: 32px;
+  padding: 32px;
+  background: #CFCFCF;
+  color: #000000;
+}
+
+#profile-card .profile-picture {
+  display: inline-block;
+  padding: 32px;
+}
+
+#profile-card .profile-basics {
+  display: inline-block;
+  line-height: 12px;
+}
+
+#profile-card .profile-controls {
+  text-align: right;
+}
+
+#profile-card .profile-controls .button {
+  padding: 12px;
+  margin-bottom: 21px;
+  border: 1px solid #FFFFFF;
+  background: #FFFFFF;
+  color: #000000;
+  text-decoration: none;
+}
