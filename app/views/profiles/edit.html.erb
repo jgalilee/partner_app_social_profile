@@ -1,12 +1,28 @@
 <div id="profile-card">
+  <%= form_tag url: update_profile_url, method: :put do %>
   <div class="profile-picture">
     <img src="<%= @profile.picture["data"]["url"] %>"></img>
   </div>
   <div class="profile-basics">
-    <h1><%= @profile.name %> (<%= @profile.email %>)</h1>
-    <p>Date of Birth: <%= @profile.birthday  %></p>
+    <p>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @profile.email %>
+    </p>
+    <p>
+      <%= label_tag :first_name %>
+      <%= text_field_tag :first_name, @profile.first_name %>
+    </p>
+    <p>
+      <%= label_tag :last_name %>
+      <%= text_field_tag :last_name, @profile.last_name %>
+    </p>
+    <p>
+      <%= label_tag :birthday %>
+      <%= text_field_tag :birthday, @profile.birthday %>
+    </p>
   </div>
   <div class="profile-controls">
-    <%= link_to "Edit Profile", edit_profile_url, class: "button" %>
+    <%= submit_tag "Save Changes", class: "button" %>
   </div>
+  <% end %>
 </div>

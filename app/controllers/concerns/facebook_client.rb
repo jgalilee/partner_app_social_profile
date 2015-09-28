@@ -11,6 +11,8 @@ module FacebookClient
     [
       :email,
       :name,
+      :first_name,
+      :last_name,
       :gender,
       :birthday,
       :picture
@@ -56,5 +58,17 @@ module FacebookClient
 
   def facebook_save_token(token)
     session[:profile] = { type: :facebook, token: token.to_hash }
+  end
+
+  def facebook_has_session?
+    facebook_token_hash.present? && !facebook_token.expired?
+  end
+
+  def facebook_token_present?
+    unless facebook_has_session?
+      flash[:notice] = "Your session has expired."
+
+      redirect_to root_url
+    end
   end
 end

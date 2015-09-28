@@ -15,6 +15,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'colorize'
 end
 
 group :development do
