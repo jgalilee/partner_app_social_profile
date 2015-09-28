@@ -4,4 +4,4 @@ development:
   site_url: "https://graph.facebook.com/v2.3/"
   token_url: "/oauth/access_token"
   authorize_url: "https://www.facebook.com/dialog/oauth?client_id=%s&redirect_uri=%s"
-  callback_url: "http://localhost:3000/sessions/facebook/callback"
+  callback_url: "<%= ENV["ROOT_URL"] %>/sessions/facebook/callback"
