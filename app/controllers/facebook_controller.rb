@@ -21,7 +21,7 @@ class FacebookController < ApplicationController
   end
 
   def logout
-    session.delete(:profile)
+    session.clear
 
     flash[:notice] = "You are now logged out"
 
