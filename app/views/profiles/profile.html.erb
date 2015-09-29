@@ -2,11 +2,54 @@
   <div class="profile-picture">
     <img src="<%= @profile.picture["data"]["url"] %>"></img>
   </div>
-  <div class="profile-basics">
+  <div class="profile-social-basics">
     <h1><%= @profile.name %> (<%= @profile.email %>)</h1>
     <p>Date of Birth: <%= @profile.birthday  %></p>
   </div>
+  <div class="profile-salesforce-basics">
+    <p>
+      <span class="address-label">
+        Mailing Street:&nbsp;
+      </span>
+      <span class="address-content">
+        <%= @contact.mailingstreet || "unknown" %>
+      </span>
+    </p>
+    <p>
+      <span class="address-label">
+        Mailing City:&nbsp;
+      </span>
+      <span class="address-content">
+        <%= @contact.mailingcity || "unknown" %>
+      </span>
+    </p>
+    <p>
+      <span class="address-label">
+        Mailing State:&nbsp;
+      </span>
+      <span class="address-content">
+        <%= @contact.mailingstate || "unknown" %>
+      </span>
+    </p>
+    <p>
+      <span class="address-label">
+        Mailing Postal Code:&nbsp;
+      </span>
+      <span class="address-content">
+        <%= @contact.mailingpostalcode || "unknown"%>
+      </span>
+    </p>
+    <p>
+      <span class="address-label">
+        Mailing Country:&nbsp;
+      </span>
+      <span class="address-content">
+        <%= @contact.mailingcountry || "unknown" %>
+      </span>
+    </p>
+  </div>
   <div class="profile-controls">
-    <%= link_to "Edit Profile", edit_profile_url, class: "button" %>
+    <%= link_to "Edit Address", edit_profile_url, class: "button" %>
+    <%= link_to "Logout", logout_sessions_facebook_url, class: "button" %>
   </div>
 </div>
