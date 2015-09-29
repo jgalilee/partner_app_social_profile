@@ -18,6 +18,10 @@ class FacebookController < ApplicationController
     facebook_save_token(token)
 
     redirect_to profile_url
+  rescue => e
+    flash[:alert] = "There was an issue authenticating with Facebook"
+
+    redirect_to root_url
   end
 
   def logout

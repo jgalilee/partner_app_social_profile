@@ -12,7 +12,8 @@ group :production do
 end
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry'
+  gem 'pry_debug'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'colorize'

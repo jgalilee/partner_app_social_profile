@@ -53,7 +53,12 @@ module FacebookClient
   end
 
   def facebook_token_hash
-    @token_hash ||= session.fetch("profile", {}).fetch("token", nil)
+    if session.has_key? "profile"
+      if session["profile"].has_key? "token"
+        @token_hash ||= session["profile"]["token"].dup
+      end
+    end
+    @token_hash
   end
 
   def facebook_save_token(token)
