@@ -1,6 +1,19 @@
-<h1>My Social Profile</h1>
-<ul>
-  <li>
-    <%= link_to 'Facebook Login', new_sessions_facebook_url %>
-  </li>
-</ul>
+<% content_for(:css) do %>
+  <%= stylesheet_link_tag 'login', media: 'all' %>
+<% end %>
+<div id="login-form-container">
+  <div id="login-form-center">
+    <div id="login-form">
+      <div class="logo">
+        <h1>My</h1>
+        <h2>Social Profile</h2>
+      </div>
+      <div class="buttons">
+        <%= link_to new_sessions_facebook_url, class: "button" do %>
+          <%= image_tag("facebook.png") %>
+          Facebook Login
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

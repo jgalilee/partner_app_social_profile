@@ -10,13 +10,32 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-body {
-  font-family: sans-serif;
-  background: #FFFFFF;
+@font-face {
+  font-family: "Proxima Nova Alt Bold";
+  src: url(<%= font_path('ProximaNovaA-Bold.otf') %>);
+}
+
+@font-face {
+  font-family: "Proxima Nova Alt Semibold";
+  src: url(<%= font_path('ProximaNovaA-Semibold.otf') %>);
+}
+
+@font-face {
+  font-family: "Proxima Nova Alt Regular";
+  src: url(<%= font_path('ProximaNovaA-Regular.otf') %>);
+}
+
+@font-face {
+  font-family: "Proxima Nova Alt Light";
+  src: url(<%= font_path('ProximaNovaA-Light.otf') %>);
+}
+
+@font-face {
+  font-family: "Proxima Nova Alt Thin";
+  src: url(<%= font_path('ProximaNovaA-Thin.otf') %>);
 }
 
 #profile-card {
