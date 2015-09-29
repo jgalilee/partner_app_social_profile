@@ -1,24 +1,52 @@
 <div id="profile-card">
-  <%= form_tag url: update_profile_url, method: :put do %>
+  <%= form_tag(update_profile_url, method: :put) do %>
   <div class="profile-picture">
     <img src="<%= @profile.picture["data"]["url"] %>"></img>
   </div>
-  <div class="profile-basics">
+  <div class="profile-social-basics">
+    <h1><%= @profile.name %> (<%= @profile.email %>)</h1>
+    <p>Date of Birth: <%= @profile.birthday  %></p>
+  </div>
+  <div class="profile-salesforce-basics">
     <p>
-      <%= label_tag :email %>
-      <%= text_field_tag :email, @profile.email %>
+      <span class="address-label">
+        <%= label_tag :mailingcity, "Mailing Street" %>
+      </span>
+      <span class="address-content">
+        <%= text_field_tag :mailingstreet, @contact.mailingstreet %>
+      </span>
     </p>
     <p>
-      <%= label_tag :first_name %>
-      <%= text_field_tag :first_name, @profile.first_name %>
+      <span class="address-label">
+        <%= label_tag :mailingcity, "Mailing City" %>
+      </span>
+      <span class="address-content">
+        <%= text_field_tag :mailingcity, @contact.mailingcity %>
+      </span>
     </p>
     <p>
-      <%= label_tag :last_name %>
-      <%= text_field_tag :last_name, @profile.last_name %>
+      <span class="address-label">
+        <%= label_tag :mailingstate, "Mailing State" %>
+      </span>
+      <span class="address-content">
+        <%= text_field_tag :mailingstate, @contact.mailingstate %>
+      </span>
     </p>
     <p>
-      <%= label_tag :birthday %>
-      <%= text_field_tag :birthday, @profile.birthday %>
+      <span class="address-label">
+        <%= label_tag :mailingpostalcode, "Mailing Postal Code" %>
+      </span>
+      <span class="address-content">
+        <%= text_field_tag :mailingpostalcode, @contact.mailingpostalcode %>
+      </span>
+    </p>
+    <p>
+      <span class="address-label">
+        <%= label_tag :mailingcountry, "Mailing Country" %>
+      </span>
+      <span class="address-content">
+        <%= text_field_tag :mailingcountry, @contact.mailingcountry %>
+      </span>
     </p>
   </div>
   <div class="profile-controls">

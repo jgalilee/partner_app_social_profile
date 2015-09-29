@@ -7,19 +7,30 @@ class ProfilesController < ApplicationController
   after_action :save_facebook_profile
 
   def profile
-    @contact = Salesforce::Contact.where(facebookid__c: @profile.id).first
-    if @contact.blank?
-      @contact = Salesforce::Contact.create_from_facebook_profile!(@profile)
+    if facebook_contact.blank?
+      facebook_create_contact
     end
   end
 
-  def edit; end
+  def edit
+    facebook_contact
+  end
 
   def update
-    @contact = Salesforce::Contact.where(facebookid__c: @profile.id).first
+    facebook_contact.update(contact_params)
+
+    redirect_to profile_url
   end
 
   private
+
+  def facebook_contact
+    @contact ||= Salesforce::Contact.where(facebookid__c: @profile.id).first
+  end
+
+  def facebook_create_contact
+    @contact ||= Salesforce::Contact.create_from_facebook_profile!(@profile)
+  end
 
   def load_facebook_profile
     @profile ||= facebook_load_profile
@@ -27,6 +38,10 @@ class ProfilesController < ApplicationController
 
   def save_facebook_profile
     facebook_save_token(facebook_token)
+  end
+
+  def contact_params
+    params.permit(:mailingcity, :mailingcountry, :mailingpostalcode, :mailingstreet, :mailingstate)
   end
 
 end
