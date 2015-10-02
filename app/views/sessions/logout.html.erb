@@ -1,0 +1,18 @@
+<% content_for(:css) do %>
+  <%= stylesheet_link_tag 'message', media: 'all' %>
+<% end %>
+<div id="message-box-container">
+  <div id="message-box-center">
+    <div id="message-box" class="success">
+      <%= link_to root_url do %>
+        <%= image_tag("close.png") %>
+      <% end %>
+      <div class="title">
+        See you later!
+      </div>
+      <div class="content">
+        You are now logged out. Hate to see you go! Come back again soon.
+      </div>
+    </div>
+  </div>
+</div>
