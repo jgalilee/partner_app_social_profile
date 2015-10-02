@@ -38,7 +38,7 @@ module Salesforce
         table_name << "__c"
       end
       # heroku connect stores it's objects under a dedicated schema.
-      schema = ENV.fetch('HEROKUCONNECT_SCHEMA')
+      schema = ENV.fetch('HEROKUCONNECT_SCHEMA', 'salesforce')
       # heroku connect table is the schema and table name.
       self.table_name = "#{schema}.#{table_name}"
     end

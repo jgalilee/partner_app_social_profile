@@ -4,11 +4,10 @@ class ProfilesController < ApplicationController
   before_filter :facebook_token_present?
 
   before_action :load_facebook_profile
-  after_action :save_facebook_profile
 
   def profile
-    if facebook_contact.blank?
-      facebook_create_contact
+    if profile.blank?
+      create_profile
     end
   end
 
@@ -25,19 +24,16 @@ class ProfilesController < ApplicationController
   private
 
   def facebook_contact
-    @contact ||= Salesforce::Contact.where(facebookid__c: @profile.id).first
+    @contact ||= Profile.facebook.find(social_id: @profile.id)
   end
 
-  def facebook_create_contact
-    @contact ||= Salesforce::Contact.create_from_facebook_profile!(@profile)
+  def create_profile
+    profile_factory = FacebookProfileFactory.new(@profile.id, @profile)
+    @profile ||= profile_factory.create!
   end
 
   def load_facebook_profile
     @profile ||= facebook_load_profile
-  end
-
-  def save_facebook_profile
-    facebook_save_token(facebook_token)
   end
 
   def contact_params

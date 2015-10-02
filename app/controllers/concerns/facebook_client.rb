@@ -61,10 +61,6 @@ module FacebookClient
     @token_hash
   end
 
-  def facebook_save_token(token)
-    session[:profile] = { type: :facebook, token: token.to_hash }
-  end
-
   def facebook_has_session?
     facebook_token_hash.present? && !facebook_token.expired?
   end

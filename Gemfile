@@ -16,6 +16,7 @@ group :development, :test do
   gem 'pry_debug'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'database_cleaner'
   gem 'colorize'
 end
 
