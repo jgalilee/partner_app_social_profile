@@ -19,6 +19,8 @@ class FacebookController < ApplicationController
 
     redirect_to profile_url
   rescue => e
+    logger.error(e)
+
     redirect_to error_url
   end
 
