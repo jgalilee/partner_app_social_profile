@@ -5,7 +5,7 @@
       <span class="profile-card-title-light">SOCIAL PROFILE</span>
     </div>
     <div id="profile-card">
-      <%= link_to :logout, logout_sessions_facebook_url, class: "logout-link" %>
+      <%= link_to :logout, logout_url, class: "logout-link" %>
       <%= form_tag(update_profile_url, method: :put) do %>
       <div class="profile-social-basics">
         <div class="profile-social-basics-image">

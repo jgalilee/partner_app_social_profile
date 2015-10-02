@@ -19,17 +19,7 @@ class FacebookController < ApplicationController
 
     redirect_to profile_url
   rescue => e
-    flash[:alert] = "There was an issue authenticating with Facebook"
-
-    redirect_to root_url
-  end
-
-  def logout
-    session.clear
-
-    flash[:notice] = "You are now logged out"
-
-    redirect_to root_url
+    redirect_to error_url
   end
 
 end

@@ -1,10 +1,15 @@
 class SessionsController < ApplicationController
   include FacebookClient
 
-  before_filter :authenticate_user
+  before_filter :authenticate_user, except: :logout
 
-  def index
+  def index; end
+
+  def logout
+    session.clear
   end
+
+  def error; end
 
   protected
 

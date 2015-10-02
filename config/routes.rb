@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root controller: :sessions, action: :index
 
+  get :logout, controller: :sessions, action: :logout
+  get :error, controller: :sessions, action: :error
+
   resource :sessions, only: [:index] do
     resource :facebook, controller: :facebook, only: [:new] do
       get :callback, action: :create
-      get :logout, action: :logout
     end
   end
 

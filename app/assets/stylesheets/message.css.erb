@@ -1,0 +1,75 @@
+html {
+  background: url(background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: "Proxima Nova Alt Regular";
+  letter-spacing: 2px;
+}
+
+#message-box-container {
+  padding: 5% 0;
+}
+
+#message-box-container #message-box-center {
+  padding: 10% 0;
+}
+
+#message-box {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  padding-bottom: 70px;
+  max-width: 600px;
+  min-width: 600px;
+  max-height: 400px;
+  min-height: 400px;
+  height: 194px;
+  margin: auto;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 18pt;
+  font-family: "Proxima Nova Alt Bold";
+  letter-spacing: 3.1px;
+}
+
+#message-box {
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 7px;
+  box-shadow: 0px 0px 7px rgb(153,153,153);
+}
+
+#message-box .title {
+  border-radius: 7px 7px 0px 0px;
+  padding-top: 90px;
+  height: 90px;
+  font-size: 24pt;
+}
+
+#message-box.success .title {
+  background: rgb(80, 227, 194);
+}
+
+#message-box.error .title {
+  background: rgb(219, 60, 52);
+}
+
+#message-box .content {
+  border-radius: 0px 0px 7px 7px;
+  color: rgb(170, 170, 170);
+  padding-top: 60px;
+  margin: 60px;
+  font-size: 12pt;
+  font-family: "Proxima Nova Alt Regular";
+}
+
+#message-box a {
+  color: rgb(255, 255, 255);
+  position: relative;
+  float: right;
+  text-decoration: none;
+  padding: 10px;
+}
