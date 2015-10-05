@@ -1,0 +1,18 @@
+<% content_for(:css) do %>
+  <%= stylesheet_link_tag 'message', media: 'all' %>
+<% end %>
+<div id="message-box-container">
+  <div id="message-box-center">
+    <div id="message-box" class="notice">
+      <%= link_to root_url do %>
+        <%= image_tag("close.png") %>
+      <% end %>
+      <div class="title">
+        Whoops!
+      </div>
+      <div class="content">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  </div>
+</div>
