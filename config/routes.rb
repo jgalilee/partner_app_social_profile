@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root controller: :sessions, action: :index
 
   get :logout, controller: :sessions, action: :logout
+  get :notice, controller: :sessions, action: :notice
   get :error, controller: :sessions, action: :error
 
   resource :sessions, only: [:index] do

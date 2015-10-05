@@ -71,9 +71,9 @@ module FacebookClient
 
   def facebook_token_present?
     unless facebook_has_session?
-      flash[:notice] = "Your session has expired."
+      flash[:notice] = "Your session has expired. We had to log you out."
 
-      redirect_to root_url
+      redirect_to notice_url
     end
   end
 end

@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     session.clear
   end
 
+  def notice; end
+
   def error; end
 
   protected

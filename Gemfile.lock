@@ -42,6 +42,7 @@ GEM
     builder (3.2.2)
     coderay (1.1.0)
     colorize (0.7.7)
+    database_cleaner (1.5.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -171,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize
+  database_cleaner
   jquery-rails
   oauth2
   pg
