@@ -11,7 +11,8 @@ class ProfileFactory
 
   def create
     Profile.transaction do
-      # Create the Salesforce contact.
+      # Create the Salesforce contact. Don't save the contact, it will 
+      # be saved as part of the Profile.
       contact = Salesforce::Contact.new
       contact.email = @profile_data.email
       contact.firstname = @profile_data.first_name
@@ -22,7 +23,6 @@ class ProfileFactory
       contact.mailingpostalcode = @profile_data.mailing_postal_code
       contact.mailingstreet = @profile_data.mailing_street
       contact.mailingstate = @profile_data.mailing_state
-      contact.save!
 
       # Create the Profile.
       profile = Profile.new
@@ -32,6 +32,7 @@ class ProfileFactory
       if !profile.save
         raise ActiveRecord::Rollback
       end
+      profile
     end
   end
 

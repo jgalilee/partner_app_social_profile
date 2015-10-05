@@ -1,4 +1,4 @@
-require 'rails_heroku_connect_helper'
+require 'rails_helper'
 
 RSpec.describe Profile, type: :model do
 
