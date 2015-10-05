@@ -61,6 +61,10 @@ body {
   background: rgb(219, 60, 52);
 }
 
+#message-box.setup .title {
+  background: rgb(80, 100, 160);
+}
+
 #message-box .content {
   border-radius: 0px 0px 7px 7px;
   color: rgb(170, 170, 170);
@@ -76,4 +80,61 @@ body {
   float: right;
   text-decoration: none;
   padding: 10px;
+}
+
+#message-box.setup {
+  padding: 0px;
+}
+
+#message-box.setup label {
+  padding: 0px;
+  color: rgb(100, 100, 100);
+  font-family: "Proxima Nova Alt Bold";
+}
+
+#message-box.setup .content {
+  text-align: left;
+  padding: 0px;
+  margin-top: 30px;
+  text-transform: none;
+}
+
+#message-box.setup img.figure {
+  width: 480px;
+}
+
+#message-box.setup .step {
+  padding-bottom: 36px;
+  letter-spacing:  2px;
+}
+
+#message-box.setup .step h1 {
+  font-size: 18pt;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+#message-box.setup {
+  height: 100%;
+  max-height: none;
+}
+
+#message-box.setup .step.final {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#message-box.setup .step.final .button {
+  background: rgb(80, 100, 160);
+  border: none;
+  padding: 16px 32px 16px 32px;
+  font-size: 14pt;
+  font-family: "Proxima Nova Alt Regular";
+  color: rgb(255,255,255);
+  border-radius: 5px;
+}
+
+#message-box.setup .errors {
+  color: rgb(219, 60, 52);
+  padding-bottom: 128px;
 }

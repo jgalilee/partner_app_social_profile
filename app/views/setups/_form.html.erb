@@ -1,0 +1,113 @@
+<% if @setup.errors.present? %>
+  <div class="errors">
+    <h1>Whoops! some information is missing ...</h1>
+    <ul>
+      <% @setup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="step">
+  <p>
+  In order to use this demo application you need to connect it with
+  Facebook.
+  </p>
+  <p>
+  There are few steps you need to take in order to connect Facebook.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 1</h1>
+  <%= image_tag("setup/1", class: "figure") %>
+  <p>
+  Start by creating a new application for this demo.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 2</h1>
+  <%= image_tag("setup/2", class: "figure") %>
+  <p>
+  Choose website as the platform for your application.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 3</h1>
+  <%= image_tag("setup/3", class: "figure") %>
+  <p>
+  Give your new application a name. It doesn't have to be anything
+  fancy, you can make a new one later.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 4</h1>
+  <%= image_tag("setup/4", class: "figure") %>
+  <p>
+  Set the type of your application to utilities.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 5</h1>
+  <%= image_tag("setup/5", class: "figure") %>
+  <p>
+  Click the 'Skip Quick Start' button in the top right hand corner.
+  </p>
+  <p>
+  This will take you to Step 6 where you can configure just what
+  is needed for the demo.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 6</h1>
+  <%= image_tag("setup/6", class: "figure") %>
+  <p>
+  Please enter the App ID and App Secret in the fields below. These
+  are the values shown for your application.
+  </p>
+  <div>
+    <%= f.label :app_id, "App ID" %>
+    <%= f.text_field :app_id %>
+  </div>
+  <div>
+    <%= f.label :secret_key, "App Secret" %>
+    <%= f.text_field :secret_key %>
+  </div>
+</div>
+<div class="step">
+  <h1>Step 7</h1>
+  <p>
+  Enter the root URL for the application. If your current
+  URL is:
+  <pre>https://my-heroku-app.com/setup/new</pre>
+  Then your root URL is (without the trailing slash):
+  <pre>https://my-heroku-app.com</pre>
+  </p>
+  <div>
+    <%= f.label :root_url, "Application URL" %>
+    <%= f.text_field :root_url %>
+  </div>
+</div>
+<div class="step">
+  <h1>Step 8</h1>
+  <%= image_tag("setup/8", class: "figure") %>
+  <p>
+  Based on the root URL you entered you need to configure the
+  redirect URL for the facebook application.
+  </p>
+  <p>
+  It should be of the form:
+  <pre>&lt;APPLICATION_URL&gt;/sessions/facebook/callback</pre> where
+  APPLICATION_URL is the value you entered in Step 7.
+  </p>
+</div>
+<div class="step">
+  <h1>Step 9 (Optional)</h1>
+  <%= image_tag("setup/9", class: "figure") %>
+  <p>
+  If you want other people to use this demo application you have to
+  give them a role with your development application.
+  </p>
+</div>
+<div class="step final">
+  <%= f.submit "Finish Setup", class: "button" %>
+</div>

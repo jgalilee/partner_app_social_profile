@@ -23,16 +23,28 @@ module FacebookClient
     facebook_client_settings[:authorize_url] % [app_id, redirect_uri]
   end
 
+  def facebook_redirect_url
+    setup = Setup.first
+    facebook_client_settings[:callback_url] % setup.root_url
+  end
+
+  def facebook_callback_uri
+    setup = Setup.first
+    callback_url = facebook_client_settings[:callback_url] % setup.root_url
+
+    facebook_authorize_uri(setup.app_id, callback_url)
+  end
+
   def facebook_default_client
     @default_client ||= facebook_client(facebook_client_settings)
   end
 
   def facebook_client(settings)
-    app_id = settings[:app_id]
+    setup = Setup.first
     secret_key = settings[:secret_key]
     site_url = settings[:site_url]
     token_url = settings[:token_url]
-    @client ||= OAuth2::Client.new(app_id, secret_key, {
+    @client ||= OAuth2::Client.new(setup.app_id, setup.secret_key, {
       site: site_url,
       token_url: token_url,
       scope: 'user_about_me'
