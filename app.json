@@ -9,7 +9,7 @@
   "repository": "https://github.com/trineo/partner_app_social_profile",
   "success_url": "/setup/new",
   "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
+    "postdeploy": "bundle exec rake db:create db:migrate"
   },
   "image": "heroku/ruby",
   "addons": [
