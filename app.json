@@ -1,0 +1,19 @@
+{
+  "name": "Social Profile",
+  "description": "This application demonstrates using Heroku Connect with Facebook.",
+  "keywords": [
+    "social",
+    "profile",
+    "facebook"
+  ],
+  "repository": "https://github.com/trineo/partner_app_social_profile",
+  "success_url": "/setup/new",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    "herokuconnect:demo"
+  ]
+}
+
