@@ -1,11 +1,3 @@
-html {
-  background: url(<%= asset_url("background.png") %>) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 body {
   font-family: "Proxima Nova Alt Regular";
   letter-spacing: 2px;
@@ -62,12 +54,12 @@ body {
 }
 
 #message-box.setup .title {
-  background: rgb(80, 100, 160);
+  background: rgb(88, 88, 88);
 }
 
 #message-box .content {
   border-radius: 0px 0px 7px 7px;
-  color: rgb(170, 170, 170);
+  color: rgb(88, 88, 88);
   padding-top: 60px;
   margin: 60px;
   font-size: 12pt;
@@ -87,8 +79,8 @@ body {
 }
 
 #message-box.setup label {
-  padding: 0px;
-  color: rgb(100, 100, 100);
+  margin: 0 0 0 40px;
+  color: #ffffff;
   font-family: "Proxima Nova Alt Bold";
 }
 
@@ -117,6 +109,17 @@ body {
 #message-box.setup {
   height: 100%;
   max-height: none;
+}
+
+#message-box.setup .step .highlight-step {
+  background: rgb(80, 100, 160);
+  padding: 10px;
+}
+
+#message-box.setup .step .highlight-step input {
+  float: right;
+  width: 200px;
+  margin: 0 40px 0 0;
 }
 
 #message-box.setup .step.final {

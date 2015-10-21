@@ -14,7 +14,7 @@
   Facebook.
   </p>
   <p>
-  There are few steps you need to take in order to connect Facebook.
+  There are few steps you need to take in order to do so.
   </p>
 </div>
 <div class="step">
@@ -28,7 +28,7 @@
   <h1>Step 2</h1>
   <%= image_tag(asset_url("setup/2"), class: "figure") %>
   <p>
-  Choose website as the platform for your application.
+  Choose 'Website' as the platform for your application.
   </p>
 </div>
 <div class="step">
@@ -43,7 +43,7 @@
   <h1>Step 4</h1>
   <%= image_tag(asset_url("setup/4"), class: "figure") %>
   <p>
-  Set the type of your application to utilities.
+  Set the 'Category' of your application to 'Utilities'.
   </p>
 </div>
 <div class="step">
@@ -62,13 +62,13 @@
   <%= image_tag(asset_url("setup/6"), class: "figure") %>
   <p>
   Please enter the App ID and App Secret in the fields below. These
-  are the values shown for your application.
+  are the values shown for your application on the Dashboard (as pictured above).
   </p>
-  <div>
+  <div class="highlight-step">
     <%= f.label :app_id, "App ID" %>
     <%= f.text_field :app_id %>
   </div>
-  <div>
+  <div class="highlight-step">
     <%= f.label :secret_key, "App Secret" %>
     <%= f.text_field :secret_key %>
   </div>
@@ -82,7 +82,7 @@
   Then your root URL is (without the trailing slash):
   <pre>https://my-heroku-app.com</pre>
   </p>
-  <div>
+  <div class="highlight-step">
     <%= f.label :root_url, "Application URL" %>
     <%= f.text_field :root_url %>
   </div>
